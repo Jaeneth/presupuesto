@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="./css/estilos.css">
     <title>Document</title>
 </head>
-<body>
+<body onload="cargarApp()">
     <div class="cabecero">
         <div class="presupuesto">
             <div class="presupuesto_titulo">
                 Presupuesto disponible
             </div>
-            <div class="presupuesto_valor">
+            <div class="presupuesto_valor" id="presupuesto">
                 +2,000.00
             </div>
             <div class="presupuesto_ingreso limpiarEstilos">
@@ -20,7 +20,7 @@
                     INGRESOS
                 </div>
                 <div class="derecha">
-                    <div class=" presupuesto_ingreso--valor">
+                    <div class=" presupuesto_ingreso--valor" id="ingresos">
                         +4,000.00
                     </div>
                     <div class="presupuesto_ingreso--porcentaje">
@@ -33,17 +33,17 @@
     EGRESOS
 </div>
 <div class="derecha limpiarEstilos">
-    <div class="presupuesto_egreso--valor">
+    <div class="presupuesto_egreso--valor" id="egresos">
         -1,900.00
     </div>
-    <div class="presupuesto_egreso--porcentaje">
+    <div class="presupuesto_egreso--porcentaje" id="porcentaje">
         45%
     </div>
 </div>
             </div>
         </div>
     </div>
-    <form action="" id="forma">
+    <form action="" id="forma" onsubmit="return false;">
         <div class="agregar">
             <div class="agregar_contenedor">
                 <select class="agregar_tipo" id="tipo">
@@ -55,11 +55,11 @@
                 
                 <!-- Tres inputs pide pero solo hay instruccion para dos -->
                 <input type="text" class=" agregar_descripcion" placeholder="Agregar Descripción" id="descripcion">
-                <input type="number" class="agregar_valor" placeholder="Valor" value="Valor" step="any">
+                <input type="number" class="agregar_valor" placeholder="Valor" value="Valor" step="any" id="valor">
 
                 
                 <!-- Botón -->
-                <button class="agregar_btn">
+                <button class="agregar_btn" onclick="agregarDato()">
                     <ion-icon name="checkmark-circle-outline"> </ion-icon>
                 </button>
             </div>
@@ -132,6 +132,9 @@
         </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="/js/Dato.js"></script>
+    <script src="/js/Ingreso.js"></script>
+    <script src="/js/Egreso.js"></script>
     <script src="/js/app.js"></script>
 </body>
 </html>
